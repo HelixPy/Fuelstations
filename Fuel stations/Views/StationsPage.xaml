@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fuel_stations.Views.Stations"
+             xmlns:model="clr-namespace:Fuel_stations.Models"
+             xmlns:viewmodel="clr-namespace:Fuel_stations.ViewModels"
+             x:DataType="viewmodel:StationVM"
+             Title="{Binding Title}"
+             >
+
+
+    <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="5" RowDefinitions="Auto">
+
+        <CollectionView Grid.ColumnSpan="4" ItemsSource="{Binding StationsList}" SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Station">
+                    <Frame HeightRequest="90">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding DisplayName}"></Label>
+                            <HorizontalStackLayout Padding="10" Spacing="5">
+                                <Label Text="{Binding Product1}" ></Label>
+                                <Label Text="{Binding Product2}" ></Label>
+                                <Label Text="{Binding Product3}" ></Label>
+                                <Label Text="{Binding Product4}" ></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+        
+    </Grid>
+  
+    
+    
+    
+    
+    
+    
+</ContentPage>
